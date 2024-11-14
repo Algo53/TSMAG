@@ -11,7 +11,7 @@ const app = express();
 ConnectToMongoDB();
 
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: ["https://deploy-mern-1whq.vercel.app"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }))
