@@ -65,7 +65,7 @@ function UserHome() {
         </div>
 
         {/* Second Row: Recent Completed, Pending Tasks, and All Tasks */}
-        <div className="flex w-full gap-3">
+        <div className="flex w-full gap-3 h-20">
           <div className="flex w-1/3 bg-white rounded-lg shadow-md p-4">
             <div className="flex flex-col w-full">
               <h2 className="py-2 text-lg font-semibold text-blue-600">Recent Completed</h2>

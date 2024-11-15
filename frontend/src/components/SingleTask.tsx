@@ -58,12 +58,12 @@ function SingleTask() {
   }
 
   return (
-    <div className="flex w-full h-full p-4">
+    <div className="flex w-full h-full p-3">
       <div
-        className={`bg-white rounded-lg shadow-lg transition-all duration-300 w-full p-4 ${isEditing ? "bg-gray-900 bg-opacity-50" : ""
+        className={`bg-white rounded-lg shadow-lg transition-all duration-300 w-full p-2 ${isEditing ? "bg-gray-900 bg-opacity-50" : ""
           }`}
       >
-        <div className={`${isEditing ? "max-w-none" : "max-w-4xl"} bg-white rounded-lg shadow-md p-6 transition-all duration-300`}>
+        <div className={`${isEditing ? "max-w-none" : "max-w-4xl"} bg-white rounded-lg shadow-md px-6 py-3 transition-all duration-300`}>
           <h1 className="text-2xl font-semibold text-gray-800">{isEditing ? "Edit Task" : "Task Details"}</h1>
 
           <div className="flex flex-col gap-2 mt-4">
