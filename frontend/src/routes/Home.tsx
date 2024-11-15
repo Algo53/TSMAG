@@ -15,8 +15,8 @@ function Home() {
         <img className='rounded-2xl w-full h-full hover:shadow-2xl shadow-xl' src='/images/homePage.jpg' alt='' />
       </div>
       <div className='flex lg:w-4/12 md:w-5/12 sm:w-1/2 px-2 w-full h-full justify-between'>
-        <div className='flex flex-col sm:px-10 xs:px-5 pt-2 justify-between h-full w-full'>
-          <div className='flex flex-col gap-3 shadow-inner'>
+        <div className='flex flex-col sm:px-10 xs:px-5 pt-2 justify-around h-full w-full'>
+          <div className='flex flex-col gap-3'>
             <div className='md:text-4xl sm:text-xl text-4xl  font-bold'>Schedule your day & task with us</div>
             <div className='md:text-lg text-md'>Transform your productivity: streamline tasks, prioritize goals, and stay on track effortlessly. Your path to organized, efficient success starts here!</div>
             <div className=''>Boost your productivity by scheduling tasks and setting priorities with ease. Streamline your day, focus on your goals, and achieve more effortlessly.</div>
