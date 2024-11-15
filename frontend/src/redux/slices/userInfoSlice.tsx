@@ -22,7 +22,7 @@ export const createUserRoute = createAsyncThunk(
     'Adding a new User',
     async (payload: CreateUserParams, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/signup`, payload,
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/auth/signup`, payload,
                 {
                     headers: {
                         "Content-Type": "application/json"
@@ -43,7 +43,7 @@ export const loginUserRoute = createAsyncThunk(
     'Login User',
     async (payload: LoginUserParams, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, payload, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/auth/login`, payload, {
                 headers: {
                     'Content-Type': "application/json"
                 },
@@ -67,7 +67,7 @@ export const getUserDetailsRoute = createAsyncThunk(
         if (!token) return rejectWithValue("Token is missing");
 
         try {
-            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/`,
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/user/`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -93,7 +93,7 @@ export const updateUserRoute = createAsyncThunk(
 
             if (!token) return rejectWithValue("Token is missing");
 
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/update`, payload,
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/user/update`, payload,
                 {
                     headers: {
                         "Content-Type": "application/json",

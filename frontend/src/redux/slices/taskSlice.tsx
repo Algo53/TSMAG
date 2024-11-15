@@ -22,7 +22,7 @@ export const addTaskRoute = createAsyncThunk(
 
         if (!token) return rejectWithValue("Token is missing");
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/task/add`, payload,
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/task/add`, payload,
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const updateTaskRoute = createAsyncThunk(
             if (!task) return rejectWithValue("Update a valid Task")
             const id = task._id;
 
-            const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/task/update/${id}`, payload, {
+            const response = await axios.put(`${process.env.REACT_APP_BACKEND_URI}/task/update/${id}`, payload, {
                 headers: {
                     'Content-Type': "application/json",
                     Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ export const getAllTaskRoute = createAsyncThunk(
         if (!token) return rejectWithValue("Token is missing");
 
         try {
-            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/task/`,
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/task/`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -104,7 +104,7 @@ export const deleteTaskRoute = createAsyncThunk(
         if (!token) return rejectWithValue("Token is missing");
 
         try {
-            const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/task/delete/${currentTask?._id}`,
+            const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URI}/task/delete/${currentTask?._id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
