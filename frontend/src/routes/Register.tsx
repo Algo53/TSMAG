@@ -53,12 +53,12 @@ function Register() {
   return (
     <div className='flex w-full h-full justify-center items-center md:px-0 sm:px-10 px-5'>
       <div className='flex h-2/3 xl:w-1/2 lg:w-3/4 md:w-10/12 w-full shadow-xl hover:shadow-2xl rounded-3xl'>
-        <div className='flex w-1/2 h-full'>
+        <div className='sm:flex hidden w-1/2 h-full'>
           <img className='w-full h-full rounded-l-3xl' src='/images/registerPage.jpg' alt='' />
         </div>
-        <div className='flex w-1/2 h-full rounded-r-3xl bg-white'>
-          <div className='flex flex-col w-full h-full lg:px-7 md:px-5 sm:px-2 pr-2 pt-3 items-center justify-around'>
-            <div className='flex sm:text-3xl text-2xl font-bold'>Welcome To Task Manager</div>
+        <div className='flex sm:w-1/2 w-full h-full sm:rounded-r-3xl bg-white'>
+          <div className='flex flex-col w-full h-full lg:px-7 md:px-5 sm:px-2 pr-2 sm:pl-0 pl-2 pt-3 items-center justify-around'>
+            <div className='flex xl:text-3xl lg:text-2xl md:text-xl text-2xl font-bold'>Welcome To Task Manager</div>
             <div className='flex flex-col w-full gap-3'>
               <div className='flex border-2 border-slate-200 rounded-xl w-full py-2 pl-2 shadow-inner hover:bg-zinc-200 cursor-pointer items-center'><i className="fa-brands fa-google fa-xl pr-2"/>Continue with Google</div>
               <div className='flex border-2 border-slate-200 rounded-xl w-full py-2 pl-2 shadow-inner hover:bg-zinc-200 cursor-pointer items-center'><i className="fa-brands fa-linkedin fa-xl pr-2"/>Continue with Linkdin</div>
