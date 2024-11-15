@@ -22,7 +22,6 @@ function SingleTask() {
   };
 
   const handleSaveChanges = () => {
-    console.log(editedTask);
     setTask(editedTask); // Update task data in state
     dispatch(updateTaskRoute(editedTask));
     setIsEditing(false);

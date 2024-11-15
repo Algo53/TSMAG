@@ -45,7 +45,6 @@ function Login() {
   }, [userDetails])
 
   useEffect( () => {
-    console.log("anfdsfldsmmdsfnnf "+user, token);
     if (user && token){
       dispatch(getUserDetailsRoute());
     }
