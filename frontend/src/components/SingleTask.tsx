@@ -66,7 +66,7 @@ function SingleTask() {
         <div className={`${isEditing ? "max-w-none" : "max-w-4xl"} bg-white rounded-lg shadow-md px-6 py-3 transition-all duration-300`}>
           <h1 className="text-2xl font-semibold text-gray-800">{isEditing ? "Edit Task" : "Task Details"}</h1>
 
-          <div className="flex flex-col gap-2 mt-4">
+          <div className="flex flex-col gap-2 mt-2">
             <div className="flex flex-col gap-1">
               <label htmlFor="title" className="block text-gray-700 font-semibold">Title</label>
               {isEditing ? (
@@ -91,8 +91,8 @@ function SingleTask() {
                   name="description"
                   value={editedTask?.description || ""}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
-                  rows={4}
+                  className="w-full px-4 pt-2 pb-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+                  rows={3}
                 />
               ) : (
                 <p className="text-gray-800">{task?.description || "No description available"}</p>
@@ -154,7 +154,7 @@ function SingleTask() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1 mt-4">
+            <div className="flex flex-col gap-1 mt-2">
               <button
                 onClick={handleMarkComplete}
                 className={`py-2 px-6 mt-2 ${isCompleted ? "bg-gray-600" : "bg-green-500"} text-white rounded-lg hover:${isCompleted ? "bg-gray-700" : "bg-green-600"} transition duration-300`}
@@ -163,7 +163,7 @@ function SingleTask() {
               </button>
             </div>
 
-            <div className="flex justify-between mt-6 gap-4">
+            <div className="flex justify-between mt-3 gap-4">
               {isEditing ? (
                 <button
                   onClick={handleSaveChanges}
