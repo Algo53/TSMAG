@@ -11,8 +11,7 @@ const app = express();
 ConnectToMongoDB();
 
 app.use(cors({
-  origin: process.env.CLIENT_URL,
-  // origin: ["https://tsma.vercel.app"],
+  origin: ["https://tsma.vercel.app"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }))
