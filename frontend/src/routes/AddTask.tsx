@@ -44,12 +44,12 @@ function AddTask() {
   }, [stats]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-opacity-70 bg-gray-100">
+    <div className="fixed inset-0 max-h-screen min-h-screen flex items-center justify-center bg-opacity-70 bg-gray-100">
       <div className="relative w-full max-w-lg mx-auto bg-white bg-opacity-90 p-8 rounded-3xl shadow-2xl text-gray-900">
 
         {/* Task Name as Title */}
-        <div className="flex items-center mb-6 justify-between">
-          <h2 className="text-3xl font-bold text-indigo-600">Create New Task</h2>
+        <div className="flex items-center mb-2 justify-between">
+          <h2 className="xs:text-3xl text-2xl font-bold text-indigo-600">Create New Task</h2>
           <div
             className="py-2 px-3 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 transition duration-200"
             onClick={() => navigate(-1)}
@@ -58,7 +58,7 @@ function AddTask() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {/* Task Name */}
           <div className="col-span-2">
             <label className="block text-lg font-semibold mb-1 text-indigo-500">Task Title:</label>
@@ -141,7 +141,7 @@ function AddTask() {
           </div>
 
           {/* Submit Button */}
-          <div className="col-span-2 mt-4">
+          <div className="col-span-2 mt-2">
             <button
               className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-lg transition duration-300"
               type="submit"
