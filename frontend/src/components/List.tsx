@@ -5,16 +5,17 @@ import { setCurrentTask } from "../redux/slices/taskSlice";
 import { useNavigate } from "react-router-dom";
 
 function List(type: any) {
+  console.log(type);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const userTasks = useAppSelector((state: RootState) => state.taskState.allTask);
   // Filter tasks based on the `type` prop
   const filteredTasks = userTasks?.filter((task: Task) => {
-    if (type === 'Pending') {
+    if (type.task === 'Pending') {
       return !task.isCompleted;
-    } else if (type === 'Completed') {
+    } else if (type.task === 'Completed') {
       return task.isCompleted;
-    } else if (type === 'All') {
+    } else if (type.task === 'All') {
       return true;
     }
     return true;
