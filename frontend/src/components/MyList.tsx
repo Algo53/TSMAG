@@ -103,25 +103,31 @@ function MyList({ type }: MyListProps) {
     return (
         <>
             {type === "My" ?
-                <div className="flex flex-col w-full h-full p-3 gap-2 min-h-screen">
-                    <div className='flex justify-between'>
-                        <h1 className="text-3xl font-bold text-gray-800 mb-3">My Tasks</h1>
+                <div className="flex flex-col w-full h-full sm:p-3 xs:p-1 gap-2 min-h-screen">
+                    <div className='flex justify-between items-center'>
+                        <h1 className="xs:text-3xl text-lg font-bold text-gray-800 mb-3">My Tasks</h1>
                         <div className='flex gap-3'>
-                            <div className='flex items-center gap-1'>
+                            <div className='flex items-center gap-1 font-semibold md:text-lg sm:text-md text-sm'>
                                 <div>Progress :</div>
-                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handleProgressSearch}><i className={`fa-solid ${progressSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"} fa-xl`} /></div>
+                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handleProgressSearch}><i className={`fa-solid ${progressSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"}  md:fa-xl sm:fa-md xs:fa-sm`} /></div>
                             </div>
-                            <div className='flex items-center gap-1'>
+                            <div className='flex items-center gap-1 font-semibold md:text-lg sm:text-md text-sm'>
                                 <div>Priority :</div>
-                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handlePrioritySearch}><i className={`fa-solid ${prSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"} fa-xl`} /></div>
+                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handlePrioritySearch}><i className={`fa-solid ${prSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"} md:fa-xl fa-md xs:fa-sm`} /></div>
                             </div>
-                            <div className='flex border-2 border-slate-200 rounded-xl py-1 px-3 gap-2 items-center'>
-                                <input className='text-sm bg-zinc-100 lg:w-52' type='text' name='search' value={search} placeholder='Enter the title of the task to search...' onChange={(e) => setSearch(e.target.value)} />
-                                <div className='py-1 px-2 hover:bg-black/20 rounded-lg cursor-pointer' onClick={handleSearch}><i className='fa-solid fa-search fa-lg' /></div>
+                            <div className='sm:flex hidden border-2 border-slate-200 rounded-xl md:px-3 sm:px-1 py-1 gap-2 items-center'>
+                                <input className='md:text-sm text-xs bg-zinc-100 lg:w-52' type='text' name='search' value={search} placeholder='Enter the title of the task to search...' onChange={(e) => setSearch(e.target.value)} />
+                                <div className='px-1 hover:bg-black/20 rounded-lg cursor-pointer' onClick={handleSearch}><i className='fa-solid fa-search fa-lg' /></div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex w-full overflow-auto bg-white p-4 rounded-lg shadow-md border border-gray-200 hide-scrollbar">
+                    <div className='sm:hidden flex w-full'>
+                        <div className='flex w-full border-2 border-slate-200 rounded-xl px-2 py-1 gap-2 items-center'>
+                            <input className='md:text-sm text-xs bg-zinc-100 w-full' type='text' name='search' value={search} placeholder='Enter the title of the task to search...' onChange={(e) => setSearch(e.target.value)} />
+                            <div className='px-1 hover:bg-black/20 rounded-lg cursor-pointer' onClick={handleSearch}><i className='fa-solid fa-search fa-lg' /></div>
+                        </div>
+                    </div>
+                    <div className="flex w-full overflow-auto bg-white p-3 rounded-lg shadow-md border border-gray-200 hide-scrollbar">
                         <div className='flex flex-col gap-3 w-full'>
                             {sTask && sTask.map((task: Task, index) => (
                                 <div
@@ -130,13 +136,13 @@ function MyList({ type }: MyListProps) {
                                     onClick={() => handleClick(task)}
                                 >
                                     <div className='flex justify-between'>
-                                        <div className='flex text-xl font-bold text-white'>{task.title}</div>
-                                        <div className={`flex py-1 px-3 rounded-md text-white ${task?.priority === 'Low' ? 'bg-blue-500' : task?.priority === 'Medium' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                        <div className='flex text-xl font-bold text-white'>{task.title.slice(0, 38)}{task.title.length > 38 ? "..." : ""}</div>
+                                        <div className={`flex h-min py-1 px-3 rounded-md text-white ${task?.priority === 'Low' ? 'bg-blue-500' : task?.priority === 'Medium' ? 'bg-green-500' : 'bg-red-500'}`}>
                                             {task?.priority}
                                         </div>
                                     </div>
                                     <div className='flex text-lg text-white h-max-32 overflow-y-scroll hide-scrollbar'>{task.description}</div>
-                                    <div className='flex w-full gap-5'>
+                                    <div className='flex sm:flex-row flex-col w-full md:gap-5 gap-3'>
                                         <div className='flex items-center text-white'>
                                             <div className='font-semibold pr-2'>Due Date:</div>{formatDate(task.dueDate)}
                                         </div>
@@ -168,12 +174,12 @@ function MyList({ type }: MyListProps) {
                         >
                             <div className='flex justify-between'>
                                 <div className='flex text-xl font-bold text-white'>{task.title}</div>
-                                <div className={`flex py-1 px-3 rounded-md text-white ${task?.priority === 'Low' ? 'bg-blue-500' : task?.priority === 'Medium' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                <div className={`flex h-min py-1 px-3 rounded-md text-white ${task?.priority === 'Low' ? 'bg-blue-500' : task?.priority === 'Medium' ? 'bg-green-500' : 'bg-red-500'}`}>
                                     {task?.priority}
                                 </div>
                             </div>
                             <div className='flex text-lg text-white h-max-32 overflow-y-scroll hide-scrollbar'>{task.description}</div>
-                            <div className='flex w-full gap-5'>
+                            <div className='flex sm:flex-row flex-col w-full md:gap-5 gap-3'>
                                 <div className='flex items-center text-white'>
                                     <div className='font-semibold pr-2'>Due Date:</div>{formatDate(task.dueDate)}
                                 </div>

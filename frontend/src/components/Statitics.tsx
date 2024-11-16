@@ -73,25 +73,24 @@ function Statitics() {
     }, [tasks]);
 
     return (
-        <div className='flex w-full h-full py-3 px-5 bg-black/70 text-white rounded-xl gap-2'>
+        <div className='flex w-full h-full py-3 md:px-5 sm:px-3 xs:px-1 bg-black/70 text-white rounded-xl gap-2'>
             <div className='flex flex-col w-1/2 h-full justify-around'>
                 {
                     stats.map((item, index) => (
-                        <div key={index} className="flex flex-col gap-1">
-                            <div className='flex text-xl font-bold'>{item.name}</div>
-                            <div className='flex text-xl font-semibold pl-3'>{item.value}</div>
+                        <div key={index} className="flex flex-col gap-1 sm:text-xl text-lg">
+                            <div className='flex sm:text-xl xs:text-lg text-md font-bold'>{item.name}</div>
+                            <div className='flex sm:text-lg xs:text-md font-semibold pl-3'>{item.value}</div>
                         </div>
                     ))
                 }
             </div>
             <div className='flex flex-col w-1/2 h-full'>
-                <div className='flex w-full text-2xl font-bold w-full justify-center pb-3'>Based on Priority</div>
                 <div className='flex flex-col gap-2'>
                     {
                         priority.map((item, index) => (
                             <div key={index} className='flex flex-col gap-1'>
-                                <div className='flex text-xl font-bold'>{item.name}</div>
-                                <div className='flex text-xl font-semibold pl-3'>{item.value}</div>
+                                <div className='flex sm:text-xl xs:text-lg text-md font-bold'>{item.name} Prio.</div>
+                                <div className='flex sm:text-lg xs:text-md font-semibold pl-3'>{item.value}</div>
                             </div>
                         ))
                     }

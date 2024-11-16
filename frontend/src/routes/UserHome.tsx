@@ -39,7 +39,7 @@ function UserHome() {
 
   return (
     <div className={`flex flex-col w-full h-full gap-1 sm:pr-5 pr-2 pb-3 ${menu ? "xl:pt-3 xl:pl-0 sm:pl-5 pl-2" : "sm:pl-5 pl-2"}`}>
-      <div className="flex w-full text-4xl py-3 px-5 text-gray-700 h-3/12">
+      <div className="flex w-full md:text-4xl xs:text-3xl text-xl py-3 px-2 text-gray-700 h-3/12">
         <div className="text-blue-600 font-semibold">
           {getGreeting()},
         </div>
@@ -52,10 +52,10 @@ function UserHome() {
       <div className="flex flex-col flex-grow w-full gap-3 h-9/12">
         {/* First Row: UpcomingTask and Statistics */}
         <div className="flex md:flex-row flex-col w-full gap-3 h-7/12">
-          <div className="flex md:w-1/2 w-full bg-white rounded-lg shadow-lg p-4">
+          <div className="flex md:w-1/2 w-full bg-white rounded-lg shadow-lg p-3">
             <UpcomingTask />
           </div>
-          <div className="flex md:w-1/2 w-full bg-white rounded-lg shadow-lg p-4">
+          <div className="flex md:w-1/2 w-full bg-white rounded-lg shadow-lg p-3">
             <Statitics />
           </div>
         </div>

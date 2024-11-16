@@ -38,7 +38,7 @@ function Navbar() {
         <div className="flex text-3xl text-zinc-500">|</div>
         <Link to='profile' className="flex items-center gap-3 rounded-lg hover:bg-black/20 py-1 px-2 cursor-pointer">
           <i className="fa-solid fa-user fa-xl" />
-          <div className="flex font-semibold text-xl">{userInfo?.name}</div>
+          <div className="xs:flex hidden font-semibold text-xl">{userInfo?.name}</div>
         </Link>
       </div>
     </div>

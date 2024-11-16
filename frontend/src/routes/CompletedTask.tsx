@@ -3,7 +3,7 @@ import MyList from '../components/MyList';
 
 function CompletedTask() {
   return (
-    <div className="flex flex-col w-full h-full p-3 gap-3">
+    <div className="flex flex-col w-full h-full sm:p-3 xs:p-1 gap-3">
       {/* Title */}
       <div className="text-3xl font-bold text-indigo-600">Completed Tasks</div>
 

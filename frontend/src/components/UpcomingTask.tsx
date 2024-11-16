@@ -52,8 +52,8 @@ function UpcomingTask() {
   }
 
   return (
-    <div className="flex flex-col w-full h-full p-3 gap-3">
-      <div className="flex text-2xl font-bold w-full justify-center px-5 py-1 bg-black/10 rounded-md">
+    <div className="flex flex-col w-full h-full gap-3">
+      <div className="flex sm:text-2xl text-xl font-bold w-full justify-center py-1 bg-black/10 rounded-md">
         Upcoming Task
       </div>
       <div className="flex flex-col gap-2">
