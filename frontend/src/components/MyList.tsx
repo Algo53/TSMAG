@@ -109,11 +109,11 @@ function MyList({ type }: MyListProps) {
                         <div className='flex gap-3'>
                             <div className='flex items-center gap-1'>
                                 <div>Progress :</div>
-                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handleProgressSearch}><i className={`fa-solid ${progressSearch ? "fa-arrow-up-wide-short" : "fa-arrow-down-wide-short"} fa-xl`} /></div>
+                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handleProgressSearch}><i className={`fa-solid ${progressSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"} fa-xl`} /></div>
                             </div>
                             <div className='flex items-center gap-1'>
                                 <div>Priority :</div>
-                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handlePrioritySearch}><i className={`fa-solid ${prSearch ? "fa-arrow-up-wide-short" : "fa-arrow-down-wide-short"} fa-xl`} /></div>
+                                <div className='py-1 px-1 hover:bg-black/10 rounded-lg cursor-pointer' onClick={handlePrioritySearch}><i className={`fa-solid ${prSearch ? "fa-arrow-down-wide-short" : "fa-arrow-up-wide-short"} fa-xl`} /></div>
                             </div>
                             <div className='flex border-2 border-slate-200 rounded-xl py-1 px-3 gap-2 items-center'>
                                 <input className='text-sm bg-zinc-100 lg:w-52' type='text' name='search' value={search} placeholder='Enter the title of the task to search...' onChange={(e) => setSearch(e.target.value)} />

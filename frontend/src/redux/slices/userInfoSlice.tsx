@@ -4,6 +4,7 @@ import { RootState } from '../store';
 
 interface IUserInfoState {
     mode: 'dark' | 'light';
+    menu: boolean;
     user: boolean;
     token: string | null;
     userInfo: IUser | null;
@@ -12,6 +13,7 @@ interface IUserInfoState {
 
 const initialState: IUserInfoState = {
     mode: 'light',
+    menu: false,
     user: false,
     token: null,
     userInfo: null,
@@ -115,6 +117,9 @@ export const userInfoSlice = createSlice({
     name: 'userInfo',
     initialState,
     reducers: {
+        setMenu: (state) => {
+            state.menu = !(state.menu);
+        },
         setMode: (state) => {
             if (state.mode === 'light') {
                 state.mode = 'dark';
@@ -178,10 +183,11 @@ export const userInfoSlice = createSlice({
 })
 
 export const selectMode = (state: RootState) => state.userInfo.mode;
+export const selectMenu = (state: RootState) => state.userInfo.menu;
 export const selectToken = (state: RootState) => state.userInfo.token;
 export const selectUser = (state: RootState) => state.userInfo.user;
 export const selectUserInfo = (state: RootState) => state.userInfo.userInfo;
 export const selectStatus = (state: RootState) => state.userInfo.status;
 
-export const { setMode, userInfoReset } = userInfoSlice.actions;
+export const { setMenu, setMode, userInfoReset } = userInfoSlice.actions;
 export default userInfoSlice.reducer;
