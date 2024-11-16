@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className='flex w-full h-full items-center pt-4 pb-[2px] justify-between'>
       <div className="flex gap-2 pl-3 items-center">
-        <div className={`${menu ? "hidden" : "flex"}  hover:bg-black/10 py-3 px-2 rounded-md cursor-pointer`} onClick={() => dispatch(setMenu())}>
+        <div className={`${menu ? "hidden" : "flex"}  hover:bg-black/10 py-3 px-1 rounded-md cursor-pointer`} onClick={() => dispatch(setMenu())}>
           <i className="fa-solid fa-bars fa-2xl" />
         </div>
         <div className='flex  gap-3 items-center'>
@@ -31,12 +31,12 @@ function Navbar() {
           <div className="md:flex hidden">{currentDate}</div>
         </div>
       </div>
-      <div className='flex gap-3 items-center'>
-        <Link to={'today'} className="sm:flex hidden items-center hover:bg-zinc-200 rounded-lg px-2 py-1 cursor-pointer">Today's Tasks</Link>
+      <div className='flex gap-3 items-center pr-2'>
+        <Link to={'today'} className="sm:flex hidden items-center hover:bg-black/20 rounded-lg px-2 py-1 cursor-pointer">Today's Tasks</Link>
         <div className="sm:flex hidden text-3xl text-zinc-500">|</div>
-        <div className='flex items-center hover:bg-zinc-200 px-1 py-3 rounded-3xl'><i className="fa-regular fa-bell fa-xl cursor-pointer" /></div>
+        <div className='flex items-center hover:bg-black/20 px-2 py-3 rounded-3xl'><i className="fa-regular fa-bell fa-xl cursor-pointer" /></div>
         <div className="flex text-3xl text-zinc-500">|</div>
-        <Link to='profile' className="flex items-center gap-3 rounded-lg hover:bg-zinc-200 py-1 px-2 cursor-pointer">
+        <Link to='profile' className="flex items-center gap-3 rounded-lg hover:bg-black/20 py-1 px-2 cursor-pointer">
           <i className="fa-solid fa-user fa-xl" />
           <div className="flex font-semibold text-xl">{userInfo?.name}</div>
         </Link>
